@@ -4,7 +4,7 @@ linktitle: "Network requirements"
 description: "Learn the network requirements for accessing Chainguard Libraries, including domains needed for authentication, package downloads, and verification tools"
 type: "article"
 date: 2025-06-04T09:30:00+00:00
-lastmod: 2026-09-28T14:00:04+00:00
+lastmod: 2026-09-30T20:13:52+00:00
 draft: false
 tags: ["Chainguard Libraries", "Reference"]
 menu:
@@ -31,6 +31,8 @@ downloaded libraries, you must allow HTTPS access to the following domains:
   Chainguard accounts.
 * `tuf-repo-cdn.sigstore.dev` for the Sigstore trust root that `chainctl libraries verify`
   uses to verify library signatures.
+* `libraries.cgr.dev` and `9236a389bd48b984df91adc1bc924620.r2.cloudflarestorage.com` for
+  `chainctl libraries verify` to download the signatures and attestations it verifies.
 
 ## Access for repository managers
 
@@ -40,6 +42,10 @@ infrastructure typically require no additional network access, as libraries are
 served through your repository manager.
 
 * `libraries.cgr.dev` and `9236a389bd48b984df91adc1bc924620.r2.cloudflarestorage.com` for library access
+
+If you run `chainctl libraries verify` on your workstations or build infrastructure,
+allow the domains in [Access for chainctl and other tools](#access-for-chainctl-and-other-tools)
+from those machines as well.
 
 ## Access for development tools
 
